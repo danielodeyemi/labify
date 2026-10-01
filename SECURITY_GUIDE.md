@@ -5,6 +5,7 @@
 ### 1. Environment Configuration (.env)
 
 **Required Settings:**
+
 ```env
 APP_ENV=production
 APP_DEBUG=false              # CRITICAL - Never true in production!
@@ -48,16 +49,16 @@ Ensure your `public/.htaccess` includes:
 <IfModule mod_headers.c>
     # Prevent clickjacking
     Header always set X-Frame-Options "SAMEORIGIN"
-    
+
     # Prevent MIME sniffing
     Header always set X-Content-Type-Options "nosniff"
-    
+
     # XSS Protection
     Header always set X-XSS-Protection "1; mode=block"
-    
+
     # Referrer Policy
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
-    
+
     # Hide server info
     Header unset X-Powered-By
     Header always unset X-Powered-By
@@ -75,6 +76,7 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 ### 4. Database Security
 
 **Create restricted database user:**
+
 ```sql
 -- Don't use root in production!
 CREATE USER 'labmanager_user'@'localhost' IDENTIFIED BY 'STRONG_PASSWORD_HERE';
@@ -87,6 +89,7 @@ FLUSH PRIVILEGES;
 ```
 
 **Strong password requirements:**
+
 - Minimum 16 characters
 - Mix of uppercase, lowercase, numbers, symbols
 - Not related to domain or application name
@@ -94,12 +97,14 @@ FLUSH PRIVILEGES;
 ### 5. Laravel Security Configuration
 
 #### config/app.php
+
 ```php
 'debug' => env('APP_DEBUG', false), // Default to false
 'url' => env('APP_URL', 'https://yourdomain.com'),
 ```
 
 #### config/session.php
+
 ```php
 'secure' => env('SESSION_SECURE_COOKIE', true), // Only HTTPS
 'same_site' => env('SESSION_SAME_SITE', 'lax'), // CSRF protection
@@ -107,6 +112,7 @@ FLUSH PRIVILEGES;
 ```
 
 #### config/database.php
+
 ```php
 // Use prepared statements (default in Laravel)
 // Never concatenate SQL queries
@@ -126,6 +132,7 @@ protected $middlewareGroups = [
 ```
 
 Add custom rate limits if needed:
+
 ```php
 // In routes/web.php or routes/api.php
 Route::middleware('throttle:60,1')->group(function () {
@@ -136,12 +143,14 @@ Route::middleware('throttle:60,1')->group(function () {
 ### 7. CSRF Protection
 
 **Verify CSRF is enabled (default in Laravel):**
+
 - All forms must include: `@csrf`
 - API routes should use Sanctum or similar
 
 ### 8. SQL Injection Prevention
 
 **Always use:**
+
 ```php
 // ✅ GOOD - Parameterized queries
 DB::table('users')->where('email', $email)->first();
@@ -156,6 +165,7 @@ DB::select("SELECT * FROM users WHERE email = '$email'");
 ### 9. XSS Prevention
 
 **In Blade templates:**
+
 ```php
 // ✅ GOOD - Escaped output
 {{ $variable }}
@@ -188,6 +198,7 @@ $filename = Str::random(40) . '.' . $extension;
 ```
 
 **In .htaccess for uploads directory:**
+
 ```apache
 # Prevent PHP execution in upload directories
 <FilesMatch "\.php$">
@@ -217,6 +228,7 @@ protected function gate()
 ```
 
 **Add IP restriction (optional):**
+
 ```apache
 # In public/.htaccess
 <Location /admin>
@@ -240,11 +252,11 @@ public function render($request, Throwable $exception)
     if ($this->shouldReport($exception) && app()->environment('production')) {
         // Log the real error
         Log::error($exception->getMessage());
-        
+
         // Show generic message to user
         return response()->view('errors.500', [], 500);
     }
-    
+
     return parent::render($request, $exception);
 }
 ```
@@ -265,6 +277,7 @@ public function render($request, Throwable $exception)
 ```
 
 **Protect logs from web access:**
+
 ```apache
 # In public/.htaccess
 <DirectoryMatch "storage/logs">
@@ -276,6 +289,7 @@ public function render($request, Throwable $exception)
 ### 14. SSL/TLS Configuration
 
 **Minimum requirements:**
+
 - Valid SSL certificate (Let's Encrypt is free)
 - TLS 1.2 or higher
 - Force HTTPS redirect
@@ -292,16 +306,17 @@ public function render($request, Throwable $exception)
 **Critical - Set up automated backups:**
 
 1. **Database backups:**
-   - Daily automated dumps
-   - Store off-server (S3, Dropbox, etc.)
-   - Test restoration monthly
+    - Daily automated dumps
+    - Store off-server (S3, Dropbox, etc.)
+    - Test restoration monthly
 
 2. **File backups:**
-   - Weekly full backups
-   - Daily incremental backups
-   - Include: uploads, storage/app/
+    - Weekly full backups
+    - Daily incremental backups
+    - Include: uploads, storage/app/
 
 **Backup script example:**
+
 ```bash
 #!/bin/bash
 DATE=$(date +%Y%m%d_%H%M%S)
@@ -313,6 +328,7 @@ tar -czf files_$DATE.tar.gz /path/to/storage/app/
 ### 16. Security Monitoring
 
 **Log important events:**
+
 ```php
 // In your controllers
 Log::info('User login', ['user_id' => $user->id, 'ip' => $request->ip()]);
@@ -321,6 +337,7 @@ Log::error('Unauthorized access attempt', ['route' => $request->path()]);
 ```
 
 **Monitor for:**
+
 - Failed login attempts
 - Unauthorized access attempts
 - File upload activities
@@ -330,11 +347,13 @@ Log::error('Unauthorized access attempt', ['route' => $request->path()]);
 ### 17. Regular Maintenance
 
 **Weekly:**
+
 - [ ] Review error logs
 - [ ] Check for failed login attempts
 - [ ] Monitor disk space
 
 **Monthly:**
+
 - [ ] Update Laravel: `composer update`
 - [ ] Update npm packages: `npm update`
 - [ ] Review user permissions
@@ -342,6 +361,7 @@ Log::error('Unauthorized access attempt', ['route' => $request->path()]);
 - [ ] Security audit
 
 **Quarterly:**
+
 - [ ] Review and update SSL certificate
 - [ ] Penetration testing (if budget allows)
 - [ ] Code security review
@@ -349,6 +369,7 @@ Log::error('Unauthorized access attempt', ['route' => $request->path()]);
 ### 18. Additional Security Measures
 
 **Disable unused features:**
+
 ```php
 // In config/app.php
 // Remove providers you don't use
@@ -359,6 +380,7 @@ Auth::routes(['register' => false]);
 ```
 
 **Content Security Policy (advanced):**
+
 ```apache
 <IfModule mod_headers.c>
     Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline';"
@@ -368,12 +390,14 @@ Auth::routes(['register' => false]);
 ### 19. Third-Party Package Security
 
 **Before using any package:**
+
 - Check GitHub stars and recent activity
 - Review open issues
 - Check for known vulnerabilities: https://github.com/FriendsOfPHP/security-advisories
 - Keep packages updated
 
 **Run security audit:**
+
 ```bash
 composer audit
 npm audit
@@ -408,30 +432,31 @@ npm audit
 **If you suspect a security breach:**
 
 1. **Immediate actions:**
-   ```bash
-   # Enable maintenance mode
-   php artisan down
-   
-   # Change all passwords (database, admin users, .env secrets)
-   # Revoke API tokens
-   # Check logs for suspicious activity
-   ```
+
+    ```bash
+    # Enable maintenance mode
+    php artisan down
+
+    # Change all passwords (database, admin users, .env secrets)
+    # Revoke API tokens
+    # Check logs for suspicious activity
+    ```
 
 2. **Investigation:**
-   - Check `storage/logs/` for unauthorized access
-   - Review database for unexpected changes
-   - Check file modifications: `find . -mtime -1 -type f`
+    - Check `storage/logs/` for unauthorized access
+    - Review database for unexpected changes
+    - Check file modifications: `find . -mtime -1 -type f`
 
 3. **Recovery:**
-   - Restore from clean backup if needed
-   - Patch security vulnerability
-   - Update all dependencies
-   - Run security audit
+    - Restore from clean backup if needed
+    - Patch security vulnerability
+    - Update all dependencies
+    - Run security audit
 
 4. **Prevention:**
-   - Document what happened
-   - Implement additional security measures
-   - Set up better monitoring
+    - Document what happened
+    - Implement additional security measures
+    - Set up better monitoring
 
 ---
 
