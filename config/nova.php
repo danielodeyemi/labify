@@ -163,7 +163,7 @@ return [
     */
 
     'brand' => [
-        'logo' => resource_path('/images/ayewosan_laboratory_logo.svg'),
+        'logo' => resource_path('/images/Labify_laboratory_logo.svg'),
 
         'colors' => [
             "400" => "255, 189, 46, 0.5",
