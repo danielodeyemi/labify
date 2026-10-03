@@ -1,12 +1,12 @@
-# Labify Laboratory Management Application
+# Àyewòsàn Laboratory Management Application
 
-![Alt text](./Labify_interface.gif)
+![Alt text](./storage/app/public/ayewosan_interface.gif)
 
 A full-featured, robust, Laboratory Information Management System (LIMS) built with Laravel. It is designed to bridge the gap between clinical testing and patient recovery by automating the complex workflows of modern medical laboratories.It provides patient management, billing, lab test cataloging, lab results workflows, referral commission tracking, and payments handling for small-to-medium diagnostic laboratories.
 
-## Labify --> Labify
+## Àyewòsàn
 
-Labify is a made-up word from the Yoruba language. It is a blend of two Yoruba words Àyẹ̀wò (Examination) and Ìwòsàn (Healing). is a robust, Laboratory Information Management System (LIMS) built with Laravel. It is designed to bridge the gap between clinical testing and patient recovery by automating the complex workflows of modern medical laboratories.
+Àyewòsàn is a made-up word from the Yoruba language. It is a blend of two Yoruba words Àyẹ̀wò (Examination) and Ìwòsàn (Healing). is a robust, Laboratory Information Management System (LIMS) built with Laravel. It is designed to bridge the gap between clinical testing and patient recovery by automating the complex workflows of modern medical laboratories.
 
 ## Key Features
 
@@ -158,6 +158,8 @@ php artisan view:clear
 3. Implement changes and tests
 4. Open a PR describing the change
 
+I can add `CONTRIBUTING.md` or CI workflow files on request.
+
 ## Make repository public (quick)
 
 ```bash
@@ -236,9 +238,9 @@ Mermaid flow:
 flowchart TD
     A[Receptionist creates Patient] --> B[Create Bill]
     B --> C{Attach Lab Tests}
-    C --> D["Save Bill (amounts = 0 until Update)"]
+    C --> D[Save Bill (amounts = 0 until Update)]
     D --> E[Record Payments]
-    E --> F["Update Bill Amounts (Nova action)"]
+    E --> F[Update Bill Amounts (Nova action)]
     D --> G[Lab Technician records Results]
     G --> H[Result status -> Delivered]
 ```
@@ -260,10 +262,10 @@ Mermaid flow:
 ```mermaid
 flowchart LR
     P[Patient with Referrer] --> B[Bill created]
-    B -->|"Payments recorded"| T[Trigger commission calc]
-    T --> R["Create Referral Transaction (credit)"]
+    B -->|Payments recorded| T[Trigger commission calc]
+    T --> R[Create Referral Transaction (credit)]
     R --> S[Referrer account balance updated]
-    S -->|"Payout requested"| O["Referral Transaction (debit) recorded"]
+    S -->|Payout requested| O[Referral Transaction (debit) recorded]
 ```
 
 Notes on logic:
@@ -307,3 +309,16 @@ Notes on logic:
 2. The action recalculates totals from attached `LabTests` (patient_price), applies discounts, computes tax if any, updates `bills.total`, `bills.subtotal`, and `bills.discount`.
 3. Observers then evaluate referral commission eligibility and create `ReferralTransactions` if applicable.
 
+## Diagrams & Assets
+
+- The Mermaid diagrams above provide quick visualizations. If you want PNG/SVG exports, I can generate image assets and add them to `docs/` or `resources/docs/` for inclusion in the repo.
+
+## Next steps I can take (optional)
+
+- Generate PNG/SVG images from Mermaid diagrams and commit to `docs/`.
+- Create `CONTRIBUTING.md` and `CODE_OF_CONDUCT.md`.
+- Add a minimal GitHub Actions workflow for PHP unit tests and static analysis.
+
+---
+
+If you'd like, I can now generate diagram images and add them to `docs/`, or create `CONTRIBUTING.md` next. Which would you prefer?

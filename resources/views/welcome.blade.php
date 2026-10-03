@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Labify Laboratory Management System</title>
+    <title>Àyewòsàn Laboratory Management System</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -827,6 +827,291 @@
                 padding: 2rem
             }
         }
+
+        .landing-shell {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        @media (min-width: 1024px) {
+            .landing-shell {
+                padding: 4rem 2rem 6rem;
+            }
+        }
+
+        .landing-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .landing-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .landing-brand-text {
+            font-size: 0.9rem;
+            color: #cbd5f5;
+        }
+
+        .landing-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.65rem 1.5rem;
+            border-radius: 9999px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background: #f97316;
+            color: #0f172a;
+            box-shadow: 0 18px 30px -20px rgba(249, 115, 22, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(148, 163, 184, 0.1);
+            color: #e2e8f0;
+            border: 1px solid rgba(148, 163, 184, 0.25);
+        }
+
+        .btn-ghost {
+            color: #cbd5f5;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            background: transparent;
+        }
+
+        .landing-hero {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .landing-hero {
+                grid-template-columns: 1.1fr 0.9fr;
+            }
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            color: #f8fafc;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .landing-title {
+            font-size: 2.75rem;
+            line-height: 1.1;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-top: 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .landing-title {
+                font-size: 3.5rem;
+            }
+        }
+
+        .landing-lead {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #94a3b8;
+            margin-top: 1.25rem;
+        }
+
+        .landing-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .metric-card {
+            padding: 1.25rem;
+            border-radius: 1rem;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            color: #e2e8f0;
+        }
+
+        .metric-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #f8fafc;
+        }
+
+        .metric-card p {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        .screenshot-frame {
+            padding: 1rem;
+            border-radius: 1.5rem;
+            background: rgba(15, 23, 42, 0.75);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            box-shadow: 0 25px 45px -30px rgba(15, 23, 42, 0.9);
+        }
+
+        .screenshot-frame img {
+            border-radius: 1rem;
+            width: 100%;
+            height: auto;
+        }
+
+        .section {
+            margin-top: 5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #f8fafc;
+        }
+
+        .section-subtitle {
+            margin-top: 0.75rem;
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            padding: 1.5rem;
+            border-radius: 1.25rem;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            color: #e2e8f0;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #f8fafc;
+        }
+
+        .feature-card p {
+            margin-top: 0.6rem;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .split-section {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        .list-check {
+            margin-top: 1.5rem;
+            display: grid;
+            gap: 0.75rem;
+            color: #cbd5f5;
+            font-size: 0.9rem;
+        }
+
+        .list-check span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .list-dot {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 9999px;
+            background: #f97316;
+        }
+
+        .kit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .kit-card {
+            padding: 1.75rem;
+            border-radius: 1.25rem;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+        }
+
+        .kit-card h4 {
+            font-size: 1.1rem;
+            color: #f8fafc;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .kit-card p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .cta-panel {
+            padding: 3rem 2rem;
+            border-radius: 1.5rem;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            text-align: center;
+        }
+
+        .landing-footer {
+            margin-top: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
     </style>
 </head>
 
@@ -837,7 +1122,7 @@
             @auth
             <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
             @else
-            <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+            <a href="/dash" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
             @if (Route::has('register'))
             <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
@@ -846,49 +1131,185 @@
         </div>
         @endif
 
-        <div class="max-w-7xl mx-auto p-6 lg:p-8">
-            <div class="flex justify-center">
-                <svg viewBox="0 0 62 65" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="195" height="44" viewBox="0 0 195 44">
-                    <image x="16" width="154" height="44" xlink:href="data:img/png;base64,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" />
-                </svg>
-            </div>
-
-            <div class="mt-16">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                    <a href="/dash" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                        <div>
-                            <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                                </svg>
-                            </div>
-
-                            <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Admin Login</h2>
-
-                            <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                Welcome to the laboratory management system administrator section. Click on this card to go to the login page.
-                            </p>
-                        </div>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                        </svg>
-                    </a>
+        <div class="landing-shell">
+            <header class="landing-nav">
+                <div class="landing-brand">
+                    <img src="{{ asset('images/landing/ayewosan_laboratory_logo.png') }}" alt="Àyewòsàn Laboratory logo" style="height: 50px; width: auto;" />
+                    <span class="landing-brand-text">Àyewòsàn Laboratory Management System</span>
                 </div>
-            </div>
+                <div class="landing-actions">
+                    <a href="/dash" class="btn btn-primary">Staff Login</a>
+                    <a href="#features" class="btn btn-secondary">Explore</a>
+                </div>
+            </header>
 
-            <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
-                <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-left">
-                    <div class="flex items-center gap-4">
-                        <a href="https://theoneng.com" class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="-mt-px mr-1 w-5 h-5 stroke-gray-400 dark:stroke-gray-600 group-hover:stroke-gray-600 dark:group-hover:stroke-gray-400">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                            </svg>
-                            TheOne Media
-                        </a>
+            <section class="landing-hero">
+                <div>
+                    <span class="eyebrow">Modern Lab Operations</span>
+                    <h1 class="landing-title">Automate your medical laboratory.</h1>
+                    <p class="landing-lead">Àyewòsàn is a robust Laboratory Information Management System (LIMS) built to automate the complex workflows of modern diagnostics. Manage patient intake, multi-test billing, and result delivery from a single, high-performance easy to use web application.</p>
+                    <div class="landing-actions" style="margin-top: 1.5rem;">
+                        <a href="/dash" class="btn btn-primary">Launch Dashboard</a>
+                        <a href="#features" class="btn btn-secondary">See Features</a>
+                    </div>
+                    <div class="landing-metrics">
+                        <div class="metric-card">
+                            <h3>RBAC</h3>
+                            <p>Granular role based access control for secure operations.</p>
+                        </div>
+                        <div class="metric-card">
+                            <h3>3-in-1</h3>
+                            <p>Billing, medical results, and commissions managed together.</p>
+                        </div>
+                        <div class="metric-card">
+                            <h3>99.9%</h3>
+                            <p>Audit-ready workflows with clear accountability.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="screenshot-frame">
+                    <img src="{{ asset('images/landing/loggedin-home-lab-dashboard.png') }}" alt="Dashboard preview placeholder" />
+                </div>
+            </section>
+
+            <section class="section" id="features">
+                <div class="section-header">
+                    <h2 class="section-title">Everything your lab needs to operate faster</h2>
+                    <p class="section-subtitle">A starter-kit inspired experience with operational clarity, built-in controls, and dashboards tailored to every role.</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Smart Billing</h3>
+                        <p>Auto-calculate totals, discounts, and dues with live payment status tracking.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Result Workflow</h3>
+                        <p>Track pending, recorded, and delivered results with full audit trails.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Referral Management</h3>
+                        <p>Automate commissions, payouts, and referrer analytics in one view.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Patient Insights</h3>
+                        <p>Manage comprehensive demographics and visit history to provide personalized care.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Test Catalog Intelligence</h3>
+                        <p>Organize tests by category and group while tracking production costs vs. patient pricing.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Audit-ready Reporting</h3>
+                        <p>Ensure every transaction and result is traceable and compliant.</p>
+                    </div>
+                                        <div class="feature-card">
+                        <h3>Quality Control</h3>
+                        <p>Generate results using standardized templates, ensuring professional and error-free delivery</p>
+                    </div>
+                                        <div class="feature-card">
+                        <h3>Business Analytics</h3>
+                        <p>Gain insights into lab performance, financial health, and operational efficiency.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section split-section">
+                <div class="screenshot-frame">
+                    <img src="{{ asset('images/landing/tests-results-dash.png') }}" alt="Test results screenshot" />
+                </div>
+                <div>
+                    <h2 class="section-title">Built for fast, error-free results delivery</h2>
+                    <p class="section-subtitle">Precision at every stage of the diagnostic journey leaving little space for human error with a system that calculates totals, tracks unpaid balances, and manages test results automatically.</p>
+                    <div class="list-check">
+                        <span><span class="list-dot"></span>Identify overdue results immediately.</span>
+                        <span><span class="list-dot"></span>Track turnaround time from bill to delivery.</span>
+                        <span><span class="list-dot"></span>Ensure every result is reviewed before release.</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Accessible Design</h2>
+                    <p class="section-subtitle">Beautiful, high-contrast layouts that keep the most important information at your fingertips.</p>
+                </div>
+                <div class="split-section">
+                    <div class="screenshot-frame">
+                        <img src="{{ asset('images/landing/ayewosan_interface-layouts.gif') }}" alt="Layouts Preview GIF" />
+                    </div>
+                    <div class="screenshot-frame">
+                        <img src="{{ asset('images/landing/test-result-template-creation.png') }}" alt="Results Template Creation Screenshot" />
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Advanced Workflow Management</h2>
+                    <p class="section-subtitle">Leverage pre-defined templates to record and deliver high-fidelity diagnostic reports.</p>
+                </div>
+                <div class="kit-grid">
+                    <div class="kit-card">
+                        <h4>Efficient Patient Journey</h4>
+                        <p>Detailed tracking for every stage of the laboratory lifecycle, from initial patient registration to final commission payouts.</p>
+                    </div>
+                    <div class="kit-card">
+                        <h4>Referral Tracking</h4>
+                        <p>Doctors and partners can track their referred patients and real-time commission balances.</p>
+                    </div>
+                    <div class="kit-card">
+                        <h4>Audit-ready Reporting</h4>
+                        <p>Generate reports instantly using reusable, brand-consistent, highly customisable templates.</p>
+                    </div>
+                    <div class="kit-card">
+                        <h4>Patient Experience</h4>
+                        <p>Swift intake, Secure portal and clear communication channels for optimized result delivery workflows.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section split-section">
+                <div>
+                    <h2 class="section-title">Open-source core for modern teams</h2>
+                    <p class="section-subtitle">Àyewòsàn is fully MIT-licensed, allowing you to freely read, modify, and build upon the core architecture to suit your specific laboratory needs.</p>
+                    <div class="landing-actions" style="margin-top: 1.5rem;">
+                        <a href="https://github.com/danielodeyemi/ayewosan" class="btn btn-primary" target="_blank" rel="noopener">Github Repo</a>
+                        <a href="https://github.com/danielodeyemi/ayewosan/blob/main/DEPLOYMENT_README.md" class="btn btn-secondary" target="_blank" rel="noopener">Deployment Guide</a>
+                    </div>
+                </div>
+                <div class="screenshot-frame">
+                    <img src="{{ asset('images/landing/github-home-shot.png') }}" alt="Deployment guide screenshot" />
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="cta-panel">
+                    <h2 class="section-title">Ready to dive deeper?</h2>
+                    <p class="section-subtitle">Launch the application and take it for a spin or browse the code and customise to fit.</p>
+                    <div class="landing-actions" style="margin-top: 1.5rem; justify-content: center;">
+                        <a href="/dash" class="btn btn-primary">Launch Demo</a>
+                        <a href="https://github.com/danielodeyemi/ayewosan" class="btn btn-secondary" target="_blank" rel="noopener">Browse Code</a>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="landing-footer">
+                <div class="flex items-center gap-4">
+                    <a href="https://danielodeyemi.com" class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500" target="_blank" rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="-mt-px mr-1 w-5 h-5 stroke-gray-400 dark:stroke-gray-600 group-hover:stroke-gray-600 dark:group-hover:stroke-gray-400">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                        Daniel Odeyemi
+                    </a>
+                    <span>•</span>
+                    <span>© {{ date('Y') }} Àyewòsàn Laboratory Management System</span>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <a href="#features" class="hover:text-gray-700 dark:hover:text-white">Features</a>
+                    <a href="https://github.com/danielodeyemi/ayewosan/blob/main/PROJECT_SCHEMA_MAP.md" class="hover:text-gray-700 dark:hover:text-white" target="_blank" rel="noopener">DB Schema</a>
+                    <a href="https://github.com/danielodeyemi/ayewosan/blob/main/README.md" class="hover:text-gray-700 dark:hover:text-white" target="_blank" rel="noopener">Readme</a>
+                </div>
+            </footer>
         </div>
     </div>
 </body>

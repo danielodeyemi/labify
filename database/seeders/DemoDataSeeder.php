@@ -21,7 +21,7 @@ class DemoDataSeeder extends Seeder
         $this->command->info('Seeding demo data...');
 
         // Get users (created by UsersSeeder)
-        $superAdmin = User::where('email', 'danieltheone09@gmail.com')->first() ?? $this->createSuperAdmin();
+        $superAdmin = User::where('email', 'superadmin@example.com')->first() ?? $this->createSuperAdmin();
         $receptionist = User::where('email', 'receptionist@example.com')->first();
         $accountant = User::where('email', 'accountant@example.com')->first();
         $labTech = User::where('email', 'laboratorytechnician@example.com')->first();
@@ -93,10 +93,10 @@ class DemoDataSeeder extends Seeder
     private function createSuperAdmin(): User
     {
         $user = User::updateOrCreate(
-            ['email' => 'danieltheone09@gmail.com'],
+            ['email' => 'superadmin@example.com'],
             [
-                'name' => 'Daniel',
-                'password' => bcrypt('Daniel'),
+                'name' => 'Super Admin',
+                'password' => bcrypt('password'),
                 'referral_percentage' => 0.00,
                 'account_balance' => 0.00,
             ]
